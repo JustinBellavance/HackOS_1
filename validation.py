@@ -16,7 +16,7 @@ loaded_model = xgb.XGBClassifier()
 # Load the model from the file
 loaded_model.load_model('xgbclass_submission.json')
 
-from betamark.betamark import ocr as ocr
+from betamark import ocr
 import pandas as pd
 import numpy as np
 
@@ -69,7 +69,6 @@ def placeholder(x):
     print(df.head(1))
     
     result = loaded_model.predict(df)
-    print(result[0])
     return(result[0])
 
 print(ocr.run_validation(user_func=placeholder))
